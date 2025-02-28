@@ -1,0 +1,37 @@
+start_number = int(input("Ingrese un número de 5 dígitos: "))
+if start_number < 10000 or start_number > 99999:
+    print("El número ingresado no es válido.")
+else: 
+    primer_digito = start_number // 10000
+    segundo_digito = (start_number // 1000) % 10
+    tercer_digito = (start_number // 100) % 10
+    cuarto_digito = (start_number // 10) % 10
+    quinto_digito = start_number % 10
+    
+    if primer_digito > segundo_digito:
+        primer_digito, segundo_digito = segundo_digito, primer_digito
+    if primer_digito > tercer_digito:
+        primer_digito, tercer_digito = tercer_digito, primer_digito
+    if primer_digito > cuarto_digito:
+        primer_digito, cuarto_digito = cuarto_digito, primer_digito
+    if primer_digito > quinto_digito:
+        primer_digito, quinto_digito = quinto_digito, primer_digito
+    if segundo_digito > tercer_digito:
+        segundo_digito, tercer_digito = tercer_digito, segundo_digito
+    if segundo_digito > cuarto_digito:
+        segundo_digito, cuarto_digito = cuarto_digito, segundo_digito
+    if segundo_digito > quinto_digito:
+        segundo_digito, quinto_digito = quinto_digito, segundo_digito
+    if tercer_digito > cuarto_digito:
+        tercer_digito, cuarto_digito = cuarto_digito, tercer_digito
+    if tercer_digito > quinto_digito:
+        tercer_digito, quinto_digito = quinto_digito, tercer_digito
+    
+    if cuarto_digito > quinto_digito:
+        cuarto_digito, quinto_digito = quinto_digito, cuarto_digito
+    
+    print("De manera Ascendente: ", primer_digito, ",", segundo_digito, ",", tercer_digito, ",", cuarto_digito, ",", quinto_digito)
+    
+    print("De manera Descendente: ", quinto_digito, ",", cuarto_digito, ",", tercer_digito, ",", segundo_digito, ",", primer_digito)
+
+
